@@ -2,24 +2,24 @@ package Entities.courses_registration;
 
 public class StudentProgram {
 
-    private int idStudentProgram;
+    private long idStudentProgram;
     private Student idStudent;
     private Program idProgram;
 
     public StudentProgram() {
     }
 
-    public StudentProgram(int idStudentProgram, Student idStudent, Program idProgram) {
+    public StudentProgram(long idStudentProgram, Student idStudent, Program idProgram) {
         this.idStudentProgram = idStudentProgram;
         this.idStudent = idStudent;
         this.idProgram = idProgram;
     }
 
-    public int getIdStudentProgram() {
+    public long getIdStudentProgram() {
         return idStudentProgram;
     }
 
-    public void setIdStudentProgram(int idStudentProgram) {
+    public void setIdStudentProgram(long idStudentProgram) {
         this.idStudentProgram = idStudentProgram;
     }
 

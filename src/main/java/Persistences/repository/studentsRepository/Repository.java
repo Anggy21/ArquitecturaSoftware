@@ -1,4 +1,4 @@
-package Persistences.repository;
+package Persistences.repository.studentsRepository;
 
 import java.util.List;
 

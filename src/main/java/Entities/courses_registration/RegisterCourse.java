@@ -1,7 +1,7 @@
 package Entities.courses_registration;
 
 public class RegisterCourse {
-    private int idRegister;
+    private long idRegister;
     private Student idStudent;
     private Course idCourse;
     private Program idProgram;
@@ -9,18 +9,18 @@ public class RegisterCourse {
 
     public RegisterCourse() {
     }
-    public RegisterCourse(int id_register, Student id_student, Course id_course, Program id_program) {
+    public RegisterCourse(long id_register, Student id_student, Course id_course, Program id_program) {
         this.idRegister = id_register;
         this.idStudent = id_student;
         this.idCourse = id_course;
         this.idProgram = id_program;
     }
 
-    public int getIdRegister() {
+    public long getIdRegister() {
         return idRegister;
     }
 
-    public void setIdRegister(int idRegister) {
+    public void setIdRegister(long idRegister) {
         this.idRegister = idRegister;
     }
 

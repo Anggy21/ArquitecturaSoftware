@@ -1,7 +1,7 @@
 package Entities.courses_registration;
 
 public class Student {
-    private int idStudent;
+    private long idStudent;
     private String codeStudent;
     private String nameStudent;
 
@@ -10,18 +10,18 @@ public class Student {
     public Student() {
     }
 
-    public Student(int idStudent, String codStudent, String nameStudent, String lnStudent) {
+    public Student(long idStudent, String codStudent, String nameStudent, String lnStudent) {
         this.idStudent = idStudent;
         this.codeStudent = codStudent;
         this.nameStudent = nameStudent;
         this.lnStudent = lnStudent;
     }
 
-    public int getIdStudent() {
+    public long getIdStudent() {
         return idStudent;
     }
 
-    public void setIdStudent(int idStudent) {
+    public void setIdStudent(long idStudent) {
         this.idStudent = idStudent;
     }
 

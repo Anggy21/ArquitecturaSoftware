@@ -1,23 +1,23 @@
 package Entities.courses_registration;
 
 public class Course {
-    private int idCourse;
+    private long idCourse;
     private String course;
     private Program idProgram;
 
     public Course() {
     }
-    public Course(int id_course, String course, Program id_program) {
+    public Course(long id_course, String course, Program id_program) {
         this.idCourse = id_course;
         this.course = course;
         this.idProgram = id_program;
     }
 
-    public int getIdCourse() {
+    public long getIdCourse() {
         return idCourse;
     }
 
-    public void setIdCourse(int id_course) {
+    public void setIdCourse(long id_course) {
         this.idCourse = id_course;
     }
 
