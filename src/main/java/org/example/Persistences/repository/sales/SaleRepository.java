@@ -23,6 +23,10 @@ public class SaleRepository implements Repository<Sale,Long> {
 
     @Override
     public void save(Sale sale) {
+        if (clientRepository.findById(sale.getIdClient().getIdClient()) == null){
+            throw new RuntimeException("Client not found");
+        }
+
         try {
             preparedStatement = connection.prepareStatement("insert into register_sales values(?,?,?,?)");
 

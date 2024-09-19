@@ -19,4 +19,12 @@ public class SaleDetailMapper {
         return saleDetail;
     }
 
+    public static SaleDetailDTO mapToSaleDTO(SaleDetail saleDetail){
+        SaleDetailDTO saleDetailDTO = new SaleDetailDTO();
+        saleDetailDTO.setIdSale(saleDetail.getIdSale().getIdSale());
+        saleDetailDTO.setIdProduct(saleDetail.getIdProduct().getIdProduct());
+
+        return saleDetailDTO;
+    }
+
 }

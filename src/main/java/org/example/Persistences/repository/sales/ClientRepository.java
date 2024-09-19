@@ -78,7 +78,7 @@ public class ClientRepository implements Repository<Client,Long> {
             client = createClient(preparedStatement.executeQuery());
 
         }catch (SQLException e){
-            throw new RuntimeException(e);
+            return null;
         }
 
         return client;

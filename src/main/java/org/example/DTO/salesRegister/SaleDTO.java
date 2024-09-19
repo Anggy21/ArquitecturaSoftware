@@ -1,9 +1,11 @@
 package org.example.DTO.salesRegister;
 
 import org.example.Entities.sales_register.Client;
+import org.example.Entities.sales_register.Product;
 import org.example.Entities.sales_register.Seller;
 
 import java.sql.Date;
+import java.util.List;
 
 public class SaleDTO {
 
