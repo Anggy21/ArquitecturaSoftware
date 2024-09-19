@@ -11,8 +11,8 @@ public class SaleDetailService {
 
     private final SaleDetailRepository saleDetailRepository;
 
-    public SaleDetailService(SaleDetailRepository saleDetailRepository) {
-        this.saleDetailRepository = saleDetailRepository;
+    public SaleDetailService() {
+        this.saleDetailRepository = new SaleDetailRepository();
     }
 
     public void save(SaleDetailDTO saleDetail) {

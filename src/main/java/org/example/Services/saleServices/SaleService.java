@@ -1,5 +1,6 @@
 package org.example.Services.saleServices;
 
+import org.example.DTO.salesRegister.ProductDTO;
 import org.example.DTO.salesRegister.SaleDTO;
 import org.example.DTO.salesRegister.SaleDetailDTO;
 import org.example.Entities.sales_register.Product;
@@ -15,12 +16,12 @@ public class SaleService {
     private final SaleRepository saleRepository;
     private final SaleDetailService saleDetailService;
 
-    public SaleService(SaleRepository saleRepository,SaleDetailService saleDetailService) {
-        this.saleRepository = saleRepository;
-        this.saleDetailService = saleDetailService;
+    public SaleService() {
+        this.saleRepository = new SaleRepository();
+        this.saleDetailService = new SaleDetailService();
     }
 
-    public void registerSale(SaleDTO saleDTO, List<Product> products) {
+    public void registerSale(SaleDTO saleDTO, List<ProductDTO> products) {
         saleRepository.save(SaleMapper.toSale(saleDTO));
 
         products.forEach(product -> {

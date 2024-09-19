@@ -11,8 +11,8 @@ public class ClientService {
 
     private final ClientRepository clientRepository;
 
-    public ClientService(ClientRepository clientRepository) {
-        this.clientRepository = clientRepository;
+    public ClientService() {
+        this.clientRepository = new ClientRepository();
     }
 
     public void saveClient(ClientDTO clientDTO) {
@@ -27,15 +27,11 @@ public class ClientService {
         clientRepository.delete(id);
     }
 
-    public Client findByIdClient(Long id) {
-        return clientRepository.findById(id);
+    public ClientDTO findByDNI(String dni) {
+        return GenericMapper.map(clientRepository.findByDNI(dni), ClientDTO.class);
     }
 
-    public Client findByDNI(String dni) {
-        return clientRepository.findByDNI(dni);
-    }
-
-    public List<Client> findAllClients() {
-        return clientRepository.findAll();
+    public List<ClientDTO> findAllClients() {
+        return GenericMapper.mapList(clientRepository.findAll(), ClientDTO.class);
     }
 }
