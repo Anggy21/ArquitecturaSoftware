@@ -1,26 +1,26 @@
 package org.example.Entities.sales_register;
 
 public class Client {
-    private  int idClient;
-    private  String dniClient;
+    private long idClient;
+    private String dniClient;
     private String nameClient;
     private String lnClient;
 
     public Client() {
     }
 
-    public Client(int idClient, String dniClient, String nameClient, String lnClient) {
+    public Client(Long idClient, String dniClient, String nameClient, String lnClient) {
         this.idClient = idClient;
         this.dniClient = dniClient;
         this.nameClient = nameClient;
         this.lnClient = lnClient;
     }
 
-    public int getIdClient() {
+    public long getIdClient() {
         return idClient;
     }
 
-    public void setIdClient(int idClient) {
+    public void setIdClient(long idClient) {
         this.idClient = idClient;
     }
 

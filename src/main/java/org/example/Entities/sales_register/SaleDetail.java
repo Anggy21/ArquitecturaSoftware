@@ -2,24 +2,24 @@ package org.example.Entities.sales_register;
 
 public class SaleDetail {
 
-    private int idSaleDetail;
+    private long idSaleDetail;
     private Sale idSale;
     private Product idProduct;
 
     public SaleDetail() {
     }
 
-    public SaleDetail(int idSaleDetail, Sale idSale, Product idProduct) {
+    public SaleDetail(long idSaleDetail, Sale idSale, Product idProduct) {
         this.idSaleDetail = idSaleDetail;
         this.idSale = idSale;
         this.idProduct = idProduct;
     }
 
-    public int getIdSaleDetail() {
+    public long getIdSaleDetail() {
         return idSaleDetail;
     }
 
-    public void setIdSaleDetail(int idSaleDetail) {
+    public void setIdSaleDetail(long idSaleDetail) {
         this.idSaleDetail = idSaleDetail;
     }
 
