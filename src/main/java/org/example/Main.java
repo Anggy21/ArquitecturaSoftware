@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.Controllers.StudentController;
+import org.example.Controllers.registerCourse.StudentController;
 import org.example.Persistences.repository.studentsRepository.StudentReposiroty;
 import org.example.Services.registerCourseServices.StudentService;
 

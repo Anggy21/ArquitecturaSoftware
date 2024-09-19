@@ -4,33 +4,42 @@ import org.example.Entities.courses_registration.Course;
 import org.example.Entities.courses_registration.Program;
 import org.example.Entities.courses_registration.RegisterCourse;
 import org.example.Entities.courses_registration.Student;
+import org.example.Persistences.repository.studentsRepository.CourseRepository;
 import org.example.Persistences.repository.studentsRepository.RegisterCourseRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RegisterCourseService {
-    private RegisterCourseRepository registerCourseRepository;
+    private final RegisterCourseRepository registerCourseRepository;
+    private final CourseService courseService;
+    private final StudentProgramService studentProgramService;
 
-    public RegisterCourseService(RegisterCourseRepository registerCourseRepository) {
+
+    public RegisterCourseService(RegisterCourseRepository registerCourseRepository, CourseService courseService, StudentProgramService studentProgramService) {
         this.registerCourseRepository = registerCourseRepository;
+        this.courseService = courseService;
+        this.studentProgramService = studentProgramService;
     }
 
-    public void registerCourse(long registerId, Student studentId, Course courseId, Program programId) throws Exception {
-    if (studentId == null || courseId == null || programId == null) {
-            throw new Exception("Id cannot be null");
+    public void registerCourse(RegisterCourse registerCourse) {
+        List<Program> programs = studentProgramService.findProgramsByStudentId(registerCourse.getIdStudent().getIdStudent());
+
+        List<Course> courses = new ArrayList<>();
+
+        for (Program program : programs) {
+            courses.addAll(courseService.findCoursesByProgram(program));
         }
 
-        RegisterCourse registerCourse = new RegisterCourse(registerId, studentId, courseId);
+        if (!courses.contains(registerCourse.getIdCourse())) {
+            return;
+        }
 
         registerCourseRepository.save(registerCourse);
     }
 
-    public void deleteRegisterCourse(long registerId) throws Exception {
-        if (registerId != 0) {
-            registerCourseRepository.delete(registerId);
-        } else {
-            throw new Exception("Id cannot found");
-        }
+    public void deleteRegisterCourse(long id)  {
+        registerCourseRepository.delete(id);
     }
 
     public RegisterCourse findRegisterCourseById(long registerId) {

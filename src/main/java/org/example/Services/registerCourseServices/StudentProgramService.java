@@ -1,5 +1,6 @@
 package org.example.Services.registerCourseServices;
 
+import org.example.Entities.courses_registration.Program;
 import org.example.Entities.courses_registration.StudentProgram;
 import org.example.Persistences.repository.studentsRepository.StudentProgramRepository;
 
@@ -16,7 +17,10 @@ public class StudentProgramService {
         return studentProgramRepository.findById(id);
     }
     public List<StudentProgram> findAllStudentPrograms() {
-        List<StudentProgram> allStudentPrograms = studentProgramRepository.findAll();
-        return allStudentPrograms;
+        return studentProgramRepository.findAll();
+    }
+
+    public List<Program> findProgramsByStudentId(long id) {
+        return studentProgramRepository.findProgramByStudentId(id);
     }
 }

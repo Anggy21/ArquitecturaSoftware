@@ -2,6 +2,7 @@ package org.example.Persistences.repository.studentsRepository;
 
 import org.example.Entities.courses_registration.Course;
 import org.example.Entities.courses_registration.Program;
+import org.example.Entities.courses_registration.StudentProgram;
 import org.example.Persistences.repository.Repository;
 import org.example.Persistences.connection.CoursesRegistrationDB;
 
@@ -13,10 +14,12 @@ public class CourseRepository implements Repository<Course, Long> {
     private Connection connection;
     private PreparedStatement preparedStatement;
     private ProgramRepository programRepository;
+    private StudentProgramRepository studentProgramRepository;
 
     public CourseRepository(){
         connection = CoursesRegistrationDB.getConnection();
         programRepository = new ProgramRepository();
+        studentProgramRepository = new StudentProgramRepository();
     }
 
     @Override
@@ -76,6 +79,35 @@ public class CourseRepository implements Repository<Course, Long> {
                 course.setIdCourse(id);
                 course.setCourse(namecourse);
                 course.setIdProgram(idProgram);
+
+                courseList.add(course);
+            }
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        return courseList;
+    }
+
+    public List<Course> findCoursesByProgram(Program program) {
+        List<Course> courseList = new ArrayList<>();
+
+        try{
+            String query = "SELECT * FROM courses WHERE id_program = ?";
+
+            preparedStatement = connection.prepareStatement(query);
+
+            preparedStatement.setLong(1, program.getIdProgram());
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()){
+                Course course = new Course();
+
+                course.setIdCourse(resultSet.getLong("id_courses"));
+                course.setCourse(resultSet.getString("course"));
+                course.setIdProgram(program);
 
                 courseList.add(course);
             }

@@ -1,5 +1,6 @@
 package org.example.Persistences.repository.studentsRepository;
 
+import org.example.Entities.courses_registration.Program;
 import org.example.Entities.courses_registration.StudentProgram;
 import org.example.Persistences.repository.Repository;
 import org.example.Persistences.connection.CoursesRegistrationDB;
@@ -85,5 +86,30 @@ public class StudentProgramRepository implements Repository<StudentProgram, Long
         }
 
         return studentProgramList;
+    }
+
+    public List<Program> findProgramByStudentId(long id) {
+        List<Program> programList = new ArrayList<>();
+
+        try {
+            String query = "SELECT * FROM students_programs WHERE id_student = ?";
+            preparedStatement = connection.prepareStatement(query);
+
+            preparedStatement.setLong(1, id);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                Program program;
+                program = programRepository.findById(resultSet.getLong("id_program"));
+
+                programList.add(program);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return programList;
     }
 }

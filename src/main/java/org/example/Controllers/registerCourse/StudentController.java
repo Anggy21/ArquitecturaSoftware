@@ -1,4 +1,4 @@
-package org.example.Controllers;
+package org.example.Controllers.registerCourse;
 
 import org.example.Entities.courses_registration.Student;
 import org.example.Services.registerCourseServices.StudentService;
