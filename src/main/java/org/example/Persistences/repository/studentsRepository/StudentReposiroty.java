@@ -1,13 +1,14 @@
 package org.example.Persistences.repository.studentsRepository;
 
 import org.example.Entities.courses_registration.Student;
-import org.example.Persistences.CoursesRegistrationDB;
+import org.example.Persistences.repository.Repository;
+import org.example.Persistences.connection.CoursesRegistrationDB;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentReposiroty implements Repository <Student, Long>{
+public class StudentReposiroty implements Repository<Student, Long> {
     Connection connection;
     PreparedStatement preparedStatement;
 

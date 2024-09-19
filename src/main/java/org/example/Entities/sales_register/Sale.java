@@ -7,13 +7,13 @@ public class Sale {
     private long idSale;
     private Seller idSeller;
     private Client idClient;
-    private LocalDateTime date;
+    private Date date;
     private float total;
 
     public Sale() {
     }
 
-    public Sale(long idSale, Seller idSeller, Client idClient, LocalDateTime date, float total) {
+    public Sale(long idSale, Seller idSeller, Client idClient, Date date, float total) {
         this.idSale = idSale;
         this.idSeller = idSeller;
         this.idClient = idClient;
@@ -45,7 +45,7 @@ public class Sale {
         this.idClient = idClient;
     }
 
-    public LocalDateTime getDate() {
+    public Date getDate() {
         return date;
     }
 

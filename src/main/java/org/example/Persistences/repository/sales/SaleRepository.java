@@ -1,9 +1,8 @@
 package org.example.Persistences.repository.sales;
 
-import Entities.sales_register.Product;
-import Entities.sales_register.Sale;
-import Persistences.SalesRegisterDB;
-import Persistences.repository.Repository;
+import org.example.Entities.sales_register.Sale;
+import org.example.Persistences.connection.SalesRegisterDB;
+import org.example.Persistences.repository.Repository;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -14,10 +13,12 @@ public class SaleRepository implements Repository<Sale,Long> {
     private final Connection connection;
     private PreparedStatement preparedStatement;
     private final ClientRepository clientRepository;
+    private final SellerRepository sellerRepository;
 
     SaleRepository(){
         connection = SalesRegisterDB.getConnection();
         clientRepository = new ClientRepository();
+        sellerRepository = new SellerRepository();
     }
 
     @Override
@@ -95,12 +96,12 @@ public class SaleRepository implements Repository<Sale,Long> {
             sale.setIdSale(resultSet.getInt("id_sale"));
             sale.setIdClient(clientRepository.findById(resultSet.getLong("id_client")));
             sale.setTotal(resultSet.getFloat("total"));
-            sale.setIdSeller();
+            sale.setIdSeller(sellerRepository.findById(resultSet.getLong("id_seller")));
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
-        return product;
+        return sale;
     }
 }

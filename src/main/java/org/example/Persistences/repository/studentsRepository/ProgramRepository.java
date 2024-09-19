@@ -1,7 +1,8 @@
 package org.example.Persistences.repository.studentsRepository;
 
 import org.example.Entities.courses_registration.Program;
-import org.example.Persistences.CoursesRegistrationDB;
+import org.example.Persistences.repository.Repository;
+import org.example.Persistences.connection.CoursesRegistrationDB;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,7 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProgramRepository implements Repository <Program, Long>{
+public class ProgramRepository implements Repository<Program, Long> {
     Connection connection;
     PreparedStatement preparedStatement;
 

@@ -1,4 +1,4 @@
-package org.example.Persistences.repository.studentsRepository;
+package org.example.Persistences.repository;
 
 import java.util.List;
 

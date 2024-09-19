@@ -1,8 +1,8 @@
 package org.example.Persistences.repository.sales;
 
 import org.example.Entities.sales_register.Client;
-import org.example.Persistences.SalesRegisterDB;
-import org.example.Persistences.repository.studentsRepository.Repository;
+import org.example.Persistences.connection.SalesRegisterDB;
+import org.example.Persistences.repository.Repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

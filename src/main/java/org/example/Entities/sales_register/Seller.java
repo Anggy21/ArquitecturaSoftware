@@ -9,7 +9,7 @@ public class Seller {
     public Seller() {
     }
 
-    public Seller(long idSeller, String dniSeller, String nameSeller, String lnSeller) {
+    public Seller(long idSeller,  String nameSeller, String lnSeller,String dniSeller) {
         this.idSeller = idSeller;
         this.dniSeller = dniSeller;
         this.nameSeller = nameSeller;

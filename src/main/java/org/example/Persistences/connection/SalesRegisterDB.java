@@ -1,4 +1,4 @@
-package org.example.Persistences;
+package org.example.Persistences.connection;
 
 import java.sql.Connection;
 
