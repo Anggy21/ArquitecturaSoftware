@@ -1,23 +1,23 @@
 package Entities.sales_register;
 
 public class Product {
-    private int idProduct;
+    private long idProduct;
     private String product;
     private float price;
 
     public Product() {
     }
-    public Product(int idProduct, String product, float price) {
+    public Product(long idProduct, String product, float price) {
         this.idProduct = idProduct;
         this.product = product;
         this.price = price;
     }
 
-    public int getIdProduct() {
+    public long getIdProduct() {
         return idProduct;
     }
 
-    public void setIdProduct(int idProduct) {
+    public void setIdProduct(long idProduct) {
         this.idProduct = idProduct;
     }
 

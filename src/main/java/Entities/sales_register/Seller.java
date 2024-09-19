@@ -1,7 +1,7 @@
 package Entities.sales_register;
 
 public class Seller {
-    private int idSeller;
+    private long idSeller;
     private String dniSeller;
     private String nameSeller;
     private String lnSeller;
@@ -9,18 +9,18 @@ public class Seller {
     public Seller() {
     }
 
-    public Seller(int idSeller, String dniSeller, String nameSeller, String lnSeller) {
+    public Seller(long idSeller, String dniSeller, String nameSeller, String lnSeller) {
         this.idSeller = idSeller;
         this.dniSeller = dniSeller;
         this.nameSeller = nameSeller;
         this.lnSeller = lnSeller;
     }
 
-    public int getIdSeller() {
+    public long getIdSeller() {
         return idSeller;
     }
 
-    public void setIdSeller(int idSeller) {
+    public void setIdSeller(long idSeller) {
         this.idSeller = idSeller;
     }
 

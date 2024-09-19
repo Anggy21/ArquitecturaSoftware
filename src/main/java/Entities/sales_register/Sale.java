@@ -1,16 +1,19 @@
 package Entities.sales_register;
 
+import java.sql.Date;
+import java.time.LocalDateTime;
+
 public class Sale {
-    private int idSale;
+    private long idSale;
     private Seller idSeller;
     private Client idClient;
-    private String date;
+    private LocalDateTime date;
     private float total;
 
     public Sale() {
     }
 
-    public Sale(int idSale, Seller idSeller, Client idClient, String date, float total) {
+    public Sale(long idSale, Seller idSeller, Client idClient, LocalDateTime date, float total) {
         this.idSale = idSale;
         this.idSeller = idSeller;
         this.idClient = idClient;
@@ -18,11 +21,11 @@ public class Sale {
         this.total = total;
     }
 
-    public int getIdSale() {
+    public long getIdSale() {
         return idSale;
     }
 
-    public void setIdSale(int idSale) {
+    public void setIdSale(long idSale) {
         this.idSale = idSale;
     }
 
@@ -42,11 +45,11 @@ public class Sale {
         this.idClient = idClient;
     }
 
-    public String getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

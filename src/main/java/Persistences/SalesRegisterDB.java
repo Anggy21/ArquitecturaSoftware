@@ -3,10 +3,19 @@ package Persistences;
 import java.sql.Connection;
 
 public class SalesRegisterDB {
-    private Connection connection;
+    private static Connection connection;
 
-    public SalesRegisterDB(){
+    private SalesRegisterDB(){
         ConnectionDB.setConnection("jdbc:mysql://localhost:3306/sales_register", "root", "root");
         connection = ConnectionDB.getConnection();
+    }
+
+    public static Connection getConnection(){
+
+        if (connection == null){
+            new SalesRegisterDB();
+        }
+
+        return connection;
     }
 }
