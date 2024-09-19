@@ -105,6 +105,23 @@ public class ClientRepository implements Repository<Client,Long> {
         return clients;
     }
 
+    public Client findByDNI(String dni){
+        Client client;
+
+        try {
+            preparedStatement = connection.prepareStatement("select * from clients where dni_client = ?");
+
+            preparedStatement.setString(1,dni);
+
+            client = createClient(preparedStatement.executeQuery());
+
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+
+        return client;
+    }
+
     private Client createClient(ResultSet resultSet){
          Client client = new Client();
 
