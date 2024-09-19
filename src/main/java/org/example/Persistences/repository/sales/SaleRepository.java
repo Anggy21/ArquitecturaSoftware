@@ -15,7 +15,7 @@ public class SaleRepository implements Repository<Sale,Long> {
     private final ClientRepository clientRepository;
     private final SellerRepository sellerRepository;
 
-    SaleRepository(){
+    public SaleRepository(){
         connection = SalesRegisterDB.getConnection();
         clientRepository = new ClientRepository();
         sellerRepository = new SellerRepository();

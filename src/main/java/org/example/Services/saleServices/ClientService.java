@@ -5,6 +5,8 @@ import org.example.Entities.sales_register.Client;
 import org.example.Persistences.repository.sales.ClientRepository;
 import org.example.utils.GenericMapper;
 
+import java.util.List;
+
 public class ClientService {
 
     private final ClientRepository clientRepository;
@@ -25,7 +27,15 @@ public class ClientService {
         clientRepository.delete(id);
     }
 
-    public ClientDTO findByIdClient(Long id) {
-        return GenericMapper.map(clientRepository.findById(id), ClientDTO.class);
+    public Client findByIdClient(Long id) {
+        return clientRepository.findById(id);
+    }
+
+    public Client findByDNI(String dni) {
+        return clientRepository.findByDNI(dni);
+    }
+
+    public List<Client> findAllClients() {
+        return clientRepository.findAll();
     }
 }

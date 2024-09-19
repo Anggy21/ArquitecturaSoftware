@@ -6,13 +6,13 @@ import org.example.Entities.sales_register.Sale;
 public class SaleDetailDTO {
 
     private long idSaleDetail;
-    private Sale idSale;
+    private long idSale;
     private long idProduct;
 
     public SaleDetailDTO() {
     }
 
-    public SaleDetailDTO(long idSaleDetail, Sale idSale, long idProduct) {
+    public SaleDetailDTO(long idSaleDetail, long idSale, long idProduct) {
         this.idSaleDetail = idSaleDetail;
         this.idSale = idSale;
         this.idProduct = idProduct;
@@ -26,11 +26,11 @@ public class SaleDetailDTO {
         this.idSaleDetail = idSaleDetail;
     }
 
-    public Sale getIdSale() {
+    public long getIdSale() {
         return idSale;
     }
 
-    public void setIdSale(Sale idSale) {
+    public void setIdSale(long idSale) {
         this.idSale = idSale;
     }
 

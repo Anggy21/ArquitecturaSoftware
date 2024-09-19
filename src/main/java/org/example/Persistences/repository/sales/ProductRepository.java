@@ -17,7 +17,7 @@ public class ProductRepository implements Repository<Product,Long> {
     private final Connection connection;
     private PreparedStatement preparedStatement;
 
-    ProductRepository(){
+    public ProductRepository(){
         connection = SalesRegisterDB.getConnection();
     }
 
