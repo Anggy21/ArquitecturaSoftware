@@ -31,7 +31,7 @@
                 </constraints>
                 <properties>
                   <font name="Fira Code Light"/>
-                  <text value="Inscripción de estudiantes"/>
+                  <text value="Inscripción de Cursos"/>
                 </properties>
               </component>
               <component id="82bed" class="javax.swing.JLabel">
@@ -39,36 +39,40 @@
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Nombre de estudiante"/>
+                  <text value="Estudiante"/>
                 </properties>
               </component>
-              <component id="a3cbc" class="javax.swing.JLabel">
+              <component id="fcde4" class="javax.swing.JComboBox" binding="stusentsList">
                 <constraints>
-                  <grid row="2" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="93a9d" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Label"/>
+                  <text value="Cursos"/>
                 </properties>
               </component>
-              <component id="afaf4" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+              <component id="2f815" class="javax.swing.JComboBox" binding="courseList">
                 <constraints>
-                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="-1"/>
-                  </grid>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties/>
               </component>
-              <component id="85827" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+              <component id="88465" class="javax.swing.JButton" binding="registerCourseButton">
                 <constraints>
-                  <grid row="1" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="-1"/>
-                  </grid>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
-                <properties/>
+                <properties>
+                  <text value="Registrar"/>
+                </properties>
               </component>
             </children>
           </grid>
-          <grid id="9275c" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="9275c" layout-manager="GridLayoutManager" row-count="4" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="Conversor"/>
@@ -76,26 +80,179 @@
             <properties/>
             <border type="none"/>
             <children>
-              <tabbedpane id="4f01" binding="tabbedPane3" default-binding="true">
+              <component id="425fd" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                    <preferred-size width="200" height="200"/>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Ruta: "/>
+                </properties>
+              </component>
+              <component id="bfca7" class="javax.swing.JTextField" binding="path">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
                 <properties/>
-                <border type="none"/>
-                <children/>
-              </tabbedpane>
+              </component>
+              <component id="d06bd" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Convertir a: "/>
+                </properties>
+              </component>
+              <component id="9c44" class="javax.swing.JComboBox" binding="format">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <model>
+                    <item value="JSON"/>
+                    <item value="PDF"/>
+                    <item value="XML"/>
+                  </model>
+                </properties>
+              </component>
+              <component id="db0eb" class="javax.swing.JButton" binding="acceptButton">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Aceptar"/>
+                </properties>
+              </component>
+              <component id="35ea0" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Fira Code Light"/>
+                  <text value="Conversor de archivos"/>
+                </properties>
+              </component>
             </children>
           </grid>
-          <grid id="1b7a3" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="1b7a3" layout-manager="GridLayoutManager" row-count="7" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="Ventas"/>
             </constraints>
             <properties/>
             <border type="none"/>
-            <children/>
+            <children>
+              <component id="92a01" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Fira Code Light"/>
+                  <text value="Registro de venta"/>
+                </properties>
+              </component>
+              <component id="c254a" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="0" row-span="3" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Cliente"/>
+                </properties>
+              </component>
+              <component id="20d7a" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Producto"/>
+                </properties>
+              </component>
+              <component id="b9d1b" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Vendedor"/>
+                </properties>
+              </component>
+              <component id="6078e" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Nombre: "/>
+                </properties>
+              </component>
+              <component id="4fd4e" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="DNI:"/>
+                </properties>
+              </component>
+              <component id="a8897" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Apellido:"/>
+                </properties>
+              </component>
+              <component id="9b955" class="javax.swing.JTextField" binding="dniClient">
+                <constraints>
+                  <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="c84e8" class="javax.swing.JTextField" binding="nameCliente">
+                <constraints>
+                  <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="a9f14" class="javax.swing.JTextField" binding="lnClient">
+                <constraints>
+                  <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="c828b" class="javax.swing.JComboBox" binding="productList">
+                <constraints>
+                  <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="b00b4" class="javax.swing.JLabel" binding="price">
+                <constraints>
+                  <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Label"/>
+                </properties>
+              </component>
+              <component id="dad1" class="javax.swing.JComboBox" binding="sellerList">
+                <constraints>
+                  <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="f8ed2" class="javax.swing.JButton" binding="registerSaleButton">
+                <constraints>
+                  <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Button"/>
+                </properties>
+              </component>
+            </children>
           </grid>
         </children>
       </tabbedpane>
