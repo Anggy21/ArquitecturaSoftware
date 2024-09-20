@@ -1,5 +1,6 @@
 package org.example.Controllers.registerCourse;
 
+import org.example.DTO.registerCourse.RegisterCourseDTO;
 import org.example.Entities.courses_registration.RegisterCourse;
 import org.example.Services.registerCourseServices.RegisterCourseService;
 
@@ -12,9 +13,10 @@ public class RegisterCourseController {
         this.registerCourseService = new RegisterCourseService();
     }
 
-    public void registerCourse(RegisterCourse registerCourse){
+    public void registerCourse(RegisterCourseDTO registerCourse){
         registerCourseService.registerCourse(registerCourse);
     }
+
     public void deleteRegisterCourse(long id){
         registerCourseService.deleteRegisterCourse(id);
     }
