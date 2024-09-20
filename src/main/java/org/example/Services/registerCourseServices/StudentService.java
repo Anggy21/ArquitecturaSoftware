@@ -8,8 +8,8 @@ import java.util.List;
 public class StudentService {
     private StudentReposiroty studentReposiroty;
 
-    public StudentService(StudentReposiroty studentReposiroty) {
-        this.studentReposiroty = studentReposiroty;
+    public StudentService() {
+        this.studentReposiroty = new StudentReposiroty();
     }
     public Student findStudentById(long id) {
         return studentReposiroty.findById(id);

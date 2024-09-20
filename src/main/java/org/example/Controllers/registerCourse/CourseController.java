@@ -1,5 +1,7 @@
 package org.example.Controllers.registerCourse;
 
+import org.example.DTO.registerCourse.CourseDTO;
+import org.example.DTO.registerCourse.ProgramDTO;
 import org.example.Entities.courses_registration.Course;
 import org.example.Entities.courses_registration.Program;
 import org.example.Services.registerCourseServices.CourseService;
@@ -9,18 +11,19 @@ import java.util.List;
 public class CourseController {
     private CourseService courseService;
 
-    public CourseController(){
-    }
-    public CourseController(CourseService courseService) {
-        this.courseService = courseService;
+    public CourseController() {
+        this.courseService = new CourseService();
     }
 
-    public void viewCoursesByProgram(Program program){
-        List<Course> coursesList = courseService.findCoursesByProgram(program);
+    public void viewCoursesByProgram(ProgramDTO program){
+      courseService.findCoursesByProgram(program);
+    }
 
-        for (Course course : coursesList) {
-            System.out.println(course);
-        }
+    public List<CourseDTO> viewAllCourses() {
+        return courseService.findAllCourses();
+    }
+
+    public CourseDTO viewCourseById(long id) {return courseService.findCourseById(id);
     }
 
 }

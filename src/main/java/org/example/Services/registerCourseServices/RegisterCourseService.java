@@ -1,14 +1,19 @@
 package org.example.Services.registerCourseServices;
 
+import org.example.DTO.registerCourse.ProgramDTO;
+import org.example.DTO.registerCourse.RegisterCourseDTO;
 import org.example.Entities.courses_registration.Course;
 import org.example.Entities.courses_registration.Program;
 import org.example.Entities.courses_registration.RegisterCourse;
 import org.example.Entities.courses_registration.Student;
 import org.example.Persistences.repository.studentsRepository.CourseRepository;
 import org.example.Persistences.repository.studentsRepository.RegisterCourseRepository;
+import org.example.utils.GenericMapper;
+import org.example.utils.RegisterCourseMapper;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class RegisterCourseService {
     private final RegisterCourseRepository registerCourseRepository;
@@ -16,26 +21,28 @@ public class RegisterCourseService {
     private final StudentProgramService studentProgramService;
 
 
-    public RegisterCourseService(RegisterCourseRepository registerCourseRepository, CourseService courseService, StudentProgramService studentProgramService) {
-        this.registerCourseRepository = registerCourseRepository;
-        this.courseService = courseService;
-        this.studentProgramService = studentProgramService;
+    public RegisterCourseService(){
+        this.registerCourseRepository = new RegisterCourseRepository();
+        this.courseService = new CourseService();
+        this.studentProgramService = new StudentProgramService();
     }
 
-    public void registerCourse(RegisterCourse registerCourse) {
-        List<Program> programs = studentProgramService.findProgramsByStudentId(registerCourse.getIdStudent().getIdStudent());
+    public void registerCourse(RegisterCourseDTO registerCourse) {
+        List<Program> programs = studentProgramService.findProgramsByStudentId(registerCourse.getIdStudent());
 
         List<Course> courses = new ArrayList<>();
 
         for (Program program : programs) {
-            courses.addAll(courseService.findCoursesByProgram(program));
+            ProgramDTO programDTO = GenericMapper.map(program, ProgramDTO.class);
+            courses.addAll(courseService.findCoursesByProgram(programDTO));
         }
 
-        if (!courses.contains(registerCourse.getIdCourse())) {
+        Optional<Course> courseFiltered = courses.stream().filter(course -> course.getIdCourse() == registerCourse.getIdCourse()).findFirst();
+
+        if (courseFiltered.isEmpty())
             return;
-        }
 
-        registerCourseRepository.save(registerCourse);
+        registerCourseRepository.save(RegisterCourseMapper.mapToRegisterCourse(registerCourse));
     }
 
     public void deleteRegisterCourse(long id)  {

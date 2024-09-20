@@ -1,27 +1,30 @@
 package org.example.Services.registerCourseServices;
 
+import org.example.DTO.registerCourse.CourseDTO;
+import org.example.DTO.registerCourse.ProgramDTO;
 import org.example.Entities.courses_registration.Course;
 import org.example.Entities.courses_registration.Program;
 import org.example.Persistences.repository.studentsRepository.CourseRepository;
+import org.example.utils.GenericMapper;
 
 import java.util.List;
 
 public class CourseService {
     private CourseRepository courseRepository;
 
-    public CourseService(CourseRepository courseRepository) {
-        this.courseRepository = courseRepository;
+    public CourseService() {
+        courseRepository = new CourseRepository();
     }
 
-    public Course findCourseById(long id) {
-        return courseRepository.findById(id);
+    public CourseDTO findCourseById(long id) {
+        return GenericMapper.map(courseRepository.findById(id), CourseDTO.class);
     }
-    public List<Course> findAllCourses() {
-        return courseRepository.findAll();
+    public List<CourseDTO> findAllCourses() {
+        return GenericMapper.mapList(courseRepository.findAll(), CourseDTO.class);
     }
 
-    public List<Course> findCoursesByProgram(Program program) {
-        return courseRepository.findCoursesByProgram(program);
+    public List<Course> findCoursesByProgram(ProgramDTO program) {
+        return courseRepository.findCoursesByProgram(GenericMapper.map(program,Program.class));
     }
 
 }

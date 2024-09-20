@@ -9,8 +9,8 @@ import java.util.List;
 public class StudentProgramService {
     private StudentProgramRepository studentProgramRepository;
 
-    public StudentProgramService(StudentProgramRepository studentProgramRepository) {
-        this.studentProgramRepository = studentProgramRepository;
+    public StudentProgramService() {
+        this.studentProgramRepository = new StudentProgramRepository();
     }
 
     public StudentProgram findStudentProgramById(long id) {

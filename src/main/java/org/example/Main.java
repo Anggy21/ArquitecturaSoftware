@@ -8,8 +8,7 @@ import org.example.Services.registerCourseServices.StudentService;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        StudentService studentService = new StudentService(new StudentReposiroty());
-        StudentController studentController = new StudentController(studentService);
+        StudentController studentController = new StudentController();
 
         studentController.viewAllStudents();
     }

@@ -13,7 +13,7 @@ public class ConsoleView {
     }
 
     public void showMenu() {
-        System.out.println("Menú de inscripción de cursos");
+        System.out.println("Menú: ");
         System.out.println("1. Inscribir Curso");
         System.out.println("2. Eliminar Curso");
         System.out.println("3. Ver cursos");

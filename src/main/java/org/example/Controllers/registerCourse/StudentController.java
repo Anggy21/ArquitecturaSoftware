@@ -3,30 +3,20 @@ package org.example.Controllers.registerCourse;
 import org.example.Entities.courses_registration.Student;
 import org.example.Services.registerCourseServices.StudentService;
 
+import java.util.List;
+
 public class StudentController {
     private StudentService studentService;
 
     public StudentController() {
-    }
-    public StudentController(StudentService studentService) {
-        this.studentService = studentService;
+        studentService = new StudentService();
     }
 
-    public void viewStudentById(long id) {
-        Student student = studentService.findStudentById(id);
-
-        System.out.println("Student ID: " + student.getIdStudent());
-        System.out.println("Student Code: " + student.getCodeStudent());
-        System.out.println("Student Name: " + student.getNameStudent());
-        System.out.println("Student Last Name: " + student.getLnStudent());
+    public Student viewStudentById(long id) {
+        return studentService.findStudentById(id);
     }
 
-    public void viewAllStudents() {
-        studentService.findAllStudents().forEach(student -> {
-            System.out.println("Student ID: " + student.getIdStudent());
-            System.out.println("Student Code: " + student.getCodeStudent());
-            System.out.println("Student Name: " + student.getNameStudent());
-            System.out.println("Student Last Name: " + student.getLnStudent());
-        });
+    public List<Student> viewAllStudents() {
+        return studentService.findAllStudents();
     }
 }
