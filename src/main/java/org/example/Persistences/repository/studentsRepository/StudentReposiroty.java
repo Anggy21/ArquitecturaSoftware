@@ -1,6 +1,6 @@
 package org.example.Persistences.repository.studentsRepository;
 
-import org.example.Entities.courses_registration.Student;
+import org.example.Entities.Student;
 import org.example.Persistences.repository.Repository;
 import org.example.Persistences.connection.CoursesRegistrationDB;
 

@@ -1,8 +1,7 @@
 package org.example.Persistences.repository.studentsRepository;
 
-import org.example.Entities.courses_registration.Course;
-import org.example.Entities.courses_registration.Program;
-import org.example.Entities.courses_registration.StudentProgram;
+import org.example.Entities.Course;
+import org.example.Entities.Program;
 import org.example.Persistences.repository.Repository;
 import org.example.Persistences.connection.CoursesRegistrationDB;
 
